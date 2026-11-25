@@ -2,7 +2,12 @@
 
 A local, two-player pixel-art RPG featuring five fighters from Adrian’s *One Hope* stories. The goal is to set an ESP32-S3 cartridge between two friends, let each pick a fighter on an Android phone, and play a full match without internet access. The DS 3870 final project also includes a playable web version.
 
-**Project status · November 24, 2026.** This repository contains the project plan. The firmware, clients, and playable builds are still to come. The final submission is due **December 8, 2026**. [Read the Statement of Work (.docx)](docs/Statement-of-Work.docx).
+**Project status · November 24, 2026.** This repository contains the project plan. The firmware, clients, and playable builds are still to come. The final submission is due **December 8, 2026**.
+
+## Project documents
+
+- **Statement of Work** covers team assignments, milestones, and acceptance tests. [Read on GitHub](docs/Statement-of-Work.md) · [Word copy](docs/Statement-of-Work.docx)
+- **Information for My Final Project** contains the full game specifications. [Read on GitHub](docs/Information-for-My-Final-Project.md) · [PDF copy](docs/Information-for-My-Final-Project.pdf) · [Section 16 — hardware identification](docs/Information-for-My-Final-Project.md#16-hardware-identification)
 
 ## How a match works
 
@@ -45,4 +50,4 @@ Jayden is the balance reference. His four named moves are **X-Slash**, **Radiant
 | Mina · Android and web interface | Build the menu, fighter selection, battle, and result screens against sample match data. Use the moonlit blue-and-silver menu concept to guide the design. |
 | Nicholas · Multiplayer sessions and validation | Define join, move, state, and disconnect messages. Build a two-player Node.js test host so both clients can be exercised before hardware integration. |
 
-The first milestone is one move on the real board with the same result visible on both clients. The final demonstration expands that path to a complete Android match and a complete browser match with all five fighters available. The [Statement of Work](docs/Statement-of-Work.docx) lists the proposed dates, handoffs, and acceptance checks.
+The first milestone is one move on the real board with the same result visible on both clients. The final demonstration expands that path to a complete Android match and a complete browser match with all five fighters available. The [Statement of Work](docs/Statement-of-Work.md) lists the proposed dates, handoffs, and acceptance checks.
