@@ -6,8 +6,8 @@ A local, two-player pixel-art RPG featuring five fighters from Adrian’s *One H
 
 ## Project documents
 
-- **Statement of Work** covers team assignments, milestones, and acceptance tests. [Read on GitHub](docs/Statement-of-Work.md) · [Word copy](docs/Statement-of-Work.docx)
-- **Information for My Final Project** contains the full game specifications. [Read on GitHub](docs/Information-for-My-Final-Project.md) · [PDF copy](docs/Information-for-My-Final-Project.pdf) · [Section 16 — hardware identification](docs/Information-for-My-Final-Project.md#16-hardware-identification)
+- [Statement of Work](docs/Statement-of-Work.md) covers team assignments, milestones, and acceptance tests.
+- [ESP32 Project Information](docs/ESP32-Project-Information.md) contains the full game specifications, including [Section 16 on hardware identification](docs/ESP32-Project-Information.md#16-hardware-identification).
 
 ## How a match works
 
