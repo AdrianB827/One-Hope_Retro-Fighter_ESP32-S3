@@ -58,9 +58,12 @@ Jayden is the balance reference. His four named moves are **X-Slash**, **Radiant
 
 ## Getting started with Flutter on Windows
 
-Install the Flutter SDK (which includes Dart) and Android Studio’s Android SDK tools. Enable USB debugging on the class phone, connect it with a USB data cable, and authorize the computer. In a new terminal, run `flutter doctor --android-licenses`, `flutter doctor`, and `flutter devices`. [Flutter installation](https://docs.flutter.dev/install/manual) · [Android setup](https://docs.flutter.dev/platform-integration/android/setup)
+1. **Install the Flutter extension in VS Code.** Press `Ctrl+Shift+X`, search for **Flutter**, and click **Install**. This also installs the Dart extension.
+2. **Download the SDK and create the shared app.** Press `Ctrl+Shift+P` and choose **Flutter: New Project**. When prompted for the Flutter SDK, choose **Download SDK**, select a folder outside this repository, click **Clone Flutter**, then **Add SDK to PATH**. The SDK includes Dart. For the first team setup, choose **Application**, select this repository as the parent folder, and name the app `retro_fighter`. Create and commit the app once. Teammates who pull it from Git can open the existing folder.
+3. **Check the installation.** Restart VS Code, open a fresh terminal, and run `flutter doctor`. Look for a checkmark next to Flutter. The Android toolchain may still need the next step.
+4. **Set up Android Studio for the class phone.** After installation, complete the setup wizard and use **SDK Manager** to install the Android SDK and **Android SDK Command-line Tools**. Run `flutter doctor --android-licenses`, review the prompts, then run `flutter doctor` again. Enable USB debugging on the phone, connect it with a USB data cable, authorize the computer, and check that it appears under `flutter devices`. [Download Android Studio](https://developer.android.com/studio)
 
-For the first client setup, run `flutter create --platforms=android,web retro_fighter` once from the repository root and share that project in Git. From `retro_fighter`, run `flutter run -d chrome`, then quit with `q` and run `flutter run -d DEVICE_ID` using the phone ID from `flutter devices`. The first exercise is the same fighter screen on both devices with four move buttons and sample HP/MP. This step works before the board is ready.
+From the `retro_fighter` folder, run `flutter run -d chrome` to try the app in a browser. Press `q` to stop, then run `flutter run -d DEVICE_ID` using the phone ID from `flutter devices`. The first exercise is the same fighter screen on both devices with four move buttons and sample HP/MP.
 
 ## Team and first milestone
 
