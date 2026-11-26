@@ -16,6 +16,21 @@ A local, two-player pixel-art RPG featuring five fighters from Adrian’s *One H
 3. Both screens show what happened. During cartridge play, the onboard RGB LED can light up in the active fighter’s color.
 4. When one fighter runs out of HP, the two players see the corresponding victory and defeat screens.
 
+## Battle screen
+
+The planned Android and browser battle screens use the same horizontal layout. Player 1 stands on the left and Player 2 on the right. The fighters face each other across a grassy field, with the moon centered between them in a starry sky. The upper-left and upper-right corners show the corresponding fighter’s full name, HP, and MP.
+
+The bottom panel changes with the turn:
+
+- **On your turn**, it shows all four moves. Under each move’s name, show the stat it scales with (such as ATK or ARC), its MP or HP cost, and any special effect. For example, Zora’s proposed *Backstab* could read “5% chance to instantly defeat the opponent.” That chance is a balance proposal for playtesting.
+- **On your opponent’s turn**, the panel shows only “Player 2’s Turn...” on Player 1’s screen or “Player 1’s Turn...” on Player 2’s screen.
+
+### Sprites and hit timing
+
+Each fighter stays in their own zone throughout a move. The match host resolves the action independently of sprite contact. For example, when Jayden lands X-Slash, he swings from his side of the field. At the impact frame, the opponent switches to their damage pose and a brief visual effect marks the hit. Each fighter has one damage sprite to reuse across incoming attacks.
+
+Adrian will draw limited-frame sprite sheets for all five fighters, with distinct key poses for each of the 20 abilities. Codex will implement the transitions between those poses using timed sprite swaps, movement within the fighter’s zone, color changes, and temporary overlays. Every move should play with placeholder art and a fallback animation from the first prototype, so individual sequences can be swapped in as their art is finished.
+
 ## The roster
 
 HP (health), MP (magic points), fighter colors, and signature strengths are established. The table also records the first draft of ATK (physical attack), DEF (defense), ARC (arcana), and SPD (speed) for playtesting. These four attributes use ten-point steps up to 50, shown as five segments in character selection. HP and MP use their own scales.
