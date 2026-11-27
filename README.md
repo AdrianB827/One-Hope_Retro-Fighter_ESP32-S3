@@ -2,7 +2,7 @@
 
 A local, two-player pixel-art RPG featuring five fighters from Adrian’s *One Hope* stories. The goal is to set an ESP32-S3 cartridge between two friends, let each pick a fighter on an Android phone, and play a full match without internet access. The DS 3870 final project also includes a playable web version.
 
-**Project status · November 27, 2026.** The first Flutter prototype passed a two-phone turn test with the G50 Plus hosting and an iPhone joining through Safari. Both players can select Jayden’s moves and see whose turn comes next. HP and MP stay fixed during this test. The next milestone is one turn resolved by the ESP32. The final submission is due **December 8, 2026**. [Run the two-phone test](retro_fighter/README.md#two-phone-turn-test).
+**Project status · November 27, 2026.** The first Flutter prototype passed a two-phone turn test with the G50 Plus hosting and an iPhone joining through Safari. Both players can select Jayden’s moves and see whose turn comes next. HP and MP stay fixed during this test. The next milestone is one turn resolved by the ESP32. The final submission is due **December 8, 2026**. [Run the two-phone test](#two-phone-turn-test).
 
 ## Project documents
 
@@ -17,6 +17,8 @@ A local, two-player pixel-art RPG featuring five fighters from Adrian’s *One H
 4. When one fighter runs out of HP, the two players see the corresponding victory and defeat screens.
 
 ## Battle screen
+
+[View the main menu concept artwork](Main%20Menu%20Concept.png).
 
 The planned Android and browser battle screens use the same horizontal layout. Player 1 stands on the left and Player 2 on the right. The fighters face each other across a grassy field, with the moon centered between them in a starry sky. The upper-left and upper-right corners show the corresponding fighter’s full name, HP, and MP.
 
@@ -65,12 +67,19 @@ Jayden is the balance reference. His four named moves are **X-Slash**, **Radiant
 
 From the `retro_fighter` folder, run `flutter run -d DEVICE_ID` using the Android phone ID from `flutter devices`. Tap **Host two-phone turn test** to invite a browser on the same Wi-Fi. Run `flutter test` from the same folder to check move selection and turn handling.
 
+### Two-phone turn test
+
+1. Connect both phones to a Wi-Fi network that allows devices to reach each other.
+2. On Android, tap **Host two-phone turn test** and keep the app open. On the second phone, open the full address shown on Android, including `http://` and the port, and tap **Join as Player 2**.
+3. Choose **X-Slash** on Android. Player 2 should see “Player 1 selected X-Slash. Your turn.” Player 1’s move buttons stay disabled until Player 2 acts.
+4. Choose **Crescent Fang** on the second phone. Confirm that Player 1 sees the move and can act again. Tap **End turn test** on Android to release both player slots.
+
 ## Repository layout and team branches
 
 | Folder | Contents |
 | --- | --- |
 | [retro_fighter/](retro_fighter/) | Shared Flutter client and tests. |
-| [docs/](docs/) | Project specifications and Statement of Work. |
+| [docs/](docs/) | Project information, including scope, hardware specifications, team responsibilities, and milestones. |
 | [characters/](characters/) | Fighter profiles, stats, and moves. |
 | [combat/](combat/) | Battle rules, formulas, and example turns. |
 | [assets/](assets/) | Source artwork, sprites, and animation frames. |
