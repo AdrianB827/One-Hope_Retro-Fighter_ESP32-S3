@@ -2,6 +2,8 @@
 
 **Master Project Specifications**
 
+For team responsibilities, milestones, and acceptance tests, see the [Statement of Work](Statement-of-Work.md).
+
 - Course: DS 3870 – Final Project
 - Final Deadline: December 8, 2026
 - Team Size: Me, Mina, & Nicholas
