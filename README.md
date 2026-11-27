@@ -2,7 +2,7 @@
 
 A local, two-player pixel-art RPG featuring five fighters from Adrian’s *One Hope* stories. The goal is to set an ESP32-S3 cartridge between two friends, let each pick a fighter on an Android phone, and play a full match without internet access. The DS 3870 final project also includes a playable web version.
 
-**Project status · November 25, 2026.** This repository contains the project plan. The firmware, clients, and playable builds are still to come. The final submission is due **December 8, 2026**.
+**Project status · November 27, 2026.** The first Flutter prototype passed a two-phone turn test with the G50 Plus hosting and an iPhone joining through Safari. Both players can select Jayden’s moves and see whose turn comes next. HP and MP stay fixed during this test. The next milestone is one turn resolved by the ESP32. The final submission is due **December 8, 2026**. [Run the two-phone test](retro_fighter/README.md#two-phone-turn-test).
 
 ## Project documents
 
@@ -59,11 +59,31 @@ Jayden is the balance reference. His four named moves are **X-Slash**, **Radiant
 ## Getting started with Flutter on Windows
 
 1. **Install the Flutter extension in VS Code.** Press `Ctrl+Shift+X`, search for **Flutter**, and click **Install**. This also installs the Dart extension.
-2. **Download the SDK and create the shared app.** Press `Ctrl+Shift+P` and choose **Flutter: New Project**. When prompted for the Flutter SDK, choose **Download SDK**, select a folder outside this repository, click **Clone Flutter**, then **Add SDK to PATH**. The SDK includes Dart. For the first team setup, choose **Application**, select this repository as the parent folder, and name the app `retro_fighter`. Create and commit the app once. Teammates who pull it from Git can open the existing folder.
+2. **Download the SDK and open the shared app.** If prompted for the Flutter SDK, choose **Download SDK**, select a folder outside this repository, click **Clone Flutter**, then **Add SDK to PATH**. The SDK includes Dart. Open the existing `retro_fighter` folder in VS Code and run `flutter pub get` in its terminal.
 3. **Check the installation.** Restart VS Code, open a fresh terminal, and run `flutter doctor`. Look for a checkmark next to Flutter. The Android toolchain may still need the next step.
 4. **Set up Android Studio for the class phone.** After installation, complete the setup wizard and use **SDK Manager** to install the Android SDK and **Android SDK Command-line Tools**. Run `flutter doctor --android-licenses`, review the prompts, then run `flutter doctor` again. Enable USB debugging on the phone, connect it with a USB data cable, authorize the computer, and check that it appears under `flutter devices`. [Download Android Studio](https://developer.android.com/studio)
 
-From the `retro_fighter` folder, run `flutter run -d chrome` to try the app in a browser. Press `q` to stop, then run `flutter run -d DEVICE_ID` using the phone ID from `flutter devices`. The first exercise is the same fighter screen on both devices with four move buttons and sample HP/MP.
+From the `retro_fighter` folder, run `flutter run -d DEVICE_ID` using the Android phone ID from `flutter devices`. Tap **Host two-phone turn test** to invite a browser on the same Wi-Fi. Run `flutter test` from the same folder to check move selection and turn handling.
+
+## Repository layout and team branches
+
+| Folder | Contents |
+| --- | --- |
+| `retro_fighter/` | Shared Flutter client and tests. Fighter portraits, sprites, and animation sheets will go under `retro_fighter/assets/fighters/<fighter>/`. |
+| `docs/` | Project specifications and SOW. Add character profiles under `docs/character-roster/` and the combat rules in `docs/combat.md` as they are written. |
+| `game-data/` | Planned shared data. Use `fighters/` for fighter stats and moves, and `combat/` for rules data and example turn inputs and results. |
+| `firmware/esp32/` | Planned C++ firmware for the cartridge. |
+| `server/` | Planned Node.js match host and protocol tests. |
+
+Start each feature from the tested prototype on `main`. Add planned folders with their first files. Open a pull request when the assigned behavior can be demonstrated.
+
+| Owner | Branch | First demonstration |
+| --- | --- | --- |
+| Adrian | `feature/esp32-two-player-turn` | The board accepts one valid move and both phones agree whose turn is next. |
+| Mina | `feature/battle-layout` | The battle screen shows both fighters and switches the move panel to a waiting message on the opponent’s turn. |
+| Nicholas | `feature/web-match-host` | Two clients join a Node.js room and exchange a turn using the agreed messages. |
+
+To start your assignment, run `git fetch origin`, then `git switch` followed by your branch name. Create later roster, animation, and combat branches when their work begins.
 
 ## Team and first milestone
 
