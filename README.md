@@ -69,13 +69,16 @@ From the `retro_fighter` folder, run `flutter run -d DEVICE_ID` using the Androi
 
 | Folder | Contents |
 | --- | --- |
-| `retro_fighter/` | Shared Flutter client and tests. Fighter portraits, sprites, and animation sheets will go under `retro_fighter/assets/fighters/<fighter>/`. |
-| `docs/` | Project specifications and SOW. Add character profiles under `docs/character-roster/` and the combat rules in `docs/combat.md` as they are written. |
-| `game-data/` | Planned shared data. Use `fighters/` for fighter stats and moves, and `combat/` for rules data and example turn inputs and results. |
-| `firmware/esp32/` | Planned C++ firmware for the cartridge. |
-| `server/` | Planned Node.js match host and protocol tests. |
+| [retro_fighter/](retro_fighter/) | Shared Flutter client and tests. |
+| [docs/](docs/) | Project specifications and Statement of Work. |
+| [characters/](characters/) | Fighter profiles, stats, and moves. |
+| [combat/](combat/) | Battle rules, formulas, and example turns. |
+| [assets/](assets/) | Source artwork, sprites, and animation frames. |
+| [firmware/](firmware/) | ESP32-S3 cartridge firmware. |
+| [server/](server/) | Node.js match host and protocol tests. |
+| [UI/](UI/) | Screen layouts and interaction notes. |
 
-Start each feature from the tested prototype on `main`. Add planned folders with their first files. Open a pull request when the assigned behavior can be demonstrated.
+Start each feature from the tested prototype on `main`. Open a pull request when the assigned behavior can be demonstrated.
 
 | Owner | Branch | First demonstration |
 | --- | --- | --- |
